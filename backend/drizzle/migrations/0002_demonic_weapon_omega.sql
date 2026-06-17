@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX `client_brand_unq_idx` ON `brands` (`client_id`,`name`);

@@ -1,0 +1,25 @@
+{
+  "name": "amc-tracker-worker",
+  "version": "1.0.0",
+  "description": "AMC Tracker - Cloudflare Worker Backend",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:generate": "drizzle-kit generate:sqlite",
+    "db:migrate": "drizzle-kit push:sqlite"
+  },
+  "dependencies": {
+    "@trpc/server": "^10.45.4",
+    "@tsndr/cloudflare-worker-jwt": "^2.5.1",
+    "drizzle-orm": "^0.29.5",
+    "jose": "^6.2.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260310.1",
+    "drizzle-kit": "^0.20.14",
+    "typescript": "^5.4.2",
+    "wrangler": "^4.72.0"
+  }
+}

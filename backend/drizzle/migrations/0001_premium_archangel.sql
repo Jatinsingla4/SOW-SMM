@@ -1,0 +1,1 @@
+ALTER TABLE brands ADD `hourly_charge` real;

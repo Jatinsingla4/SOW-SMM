@@ -1,0 +1,44 @@
+name = "amc-tracker-worker"
+main = "src/index.ts"
+compatibility_date = "2024-03-11"
+
+# ================================
+# ENVIRONMENT VARIABLES
+# ================================
+[vars]
+APP_ENV = "development"
+
+# ================================
+# D1 DATABASE (SQL DATABASE)
+# ================================
+[[d1_databases]]
+binding = "DB"
+database_name = "amc-db"
+database_id = "YOUR_D1_DATABASE_ID"
+migrations_dir = "drizzle/migrations"
+
+# ================================
+# R2 OBJECT STORAGE (FILES)
+# ================================
+[[r2_buckets]]
+binding = "AMC_FILES"
+bucket_name = "amc-files"
+
+# ================================
+# DURABLE OBJECTS (REALTIME STATE)
+# ================================
+[durable_objects]
+bindings = [
+  { name = "CHAT_DO", class_name = "ChatDO" }
+]
+
+# Durable Object migrations
+[[migrations]]
+tag = "v1"
+new_classes = ["ChatDO"]
+
+# ================================
+# OBSERVABILITY / LOGGING
+# ================================
+[observability]
+enabled = true

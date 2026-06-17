@@ -1,0 +1,9 @@
+# Cloudflare Worker / Node.js .gitignore
+node_modules
+dist
+.wrangler
+.dev.vars
+worker-configuration.d.ts
+.env
+package-lock.json
+*.log
